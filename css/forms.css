@@ -1,0 +1,139 @@
+/*
+			====		 ==		======	=====		==
+			==	==   ==			==		==			==
+			==	 ==  ==			==		=====		==
+			==		== ==			==		==			==
+			==			===		======	=====		======
+
+			==	 ==		====== ===		== ===     == ======  ======== ==		==
+			==  ==		==		 == =		== == =    == ==			======== ==   ==
+			== ==			==     == ==	== ==  ==  == ==				 ==    ==   ==
+			=====			====== ==  ==	== ==   == == ======     ==    =======
+ 			==	==		==     ==   ==== ==    ==== ==         ==    ==		==
+			==	 ==		=====  ==    === ==     === ======     ==    ==		==
+*/
+
+@import url("style.css");
+/*form {
+	text-align: center;
+	border: 5px solid #003366;
+	padding: 10px;
+	border-radius: 50px 0px 50px 0px;
+	margin: auto;
+}*/
+h1#sao-center {
+	font-size: 39px;
+	letter-spacing: 5px;
+	padding: 10px;
+	margin-bottom: 25px;
+	text-align: center;
+	border-bottom: 3px solid #003366;
+}
+fieldset, legend, input, textarea {
+	font-family: sao, alo;
+	background-color: #fff;
+	color: #003366;
+	/*text-align: center;*/
+}
+fieldset input, fieldset select, fieldset textarea {
+	margin-top: 10px;
+	/*text-align: center*/;
+}
+label {
+	color: #000000;
+}
+fieldset {
+	width: 350px;
+	padding: 20px;
+	border: 3px solid #003366;
+	margin: 20px 5px;
+	font-size: 16px;
+	letter-spacing: 1.5px;
+	border-radius: 15px;
+}
+fieldset li {
+	padding: 10px;
+}
+legend {
+	padding: 10px 10px 10px;
+	border: 3px solid #003366;
+	border-radius: 15px;
+}
+
+input{
+	border-width: medium medium 2px;
+	border-style: none none solid;
+	border-color: #003366;
+	font-family: sao;
+	font-size: 19px;
+	letter-spacing: 2px;
+}
+select {
+	background: none;
+	border: 2px solid #003366;
+	border-radius: 5px;
+}
+textarea:hover, textarea:focus,
+select:hover, select:focus,
+input:focus, input:hover {
+	border: 2px solid #FFCC00;
+}
+input:focus, input:hover {
+	border-style: none none solid;
+}
+textarea {
+	border: 2px solid #003366;
+	border-radius: 5px;
+	padding: 5px;
+	height: 100px;
+	width: 95%;
+}
+
+input#submit {
+	width: 75%;
+	display: block;
+	border: none;
+	height: 50px;
+	background-color: #003366;
+	color: #CCCCCC;
+	border-radius: 25px;
+	font-size: 30px;
+	letter-spacing: 10px;
+	
+}
+
+input#submit:hover {
+	border: 1px solid #CCCCCC;
+}
+
+aside.info h3 {
+	text-align: center;
+	font-size: 24px;
+	font-weight: normal;
+	letter-spacing: 5px;
+}
+aside.info ul {
+	margin: 10px auto;
+}
+aside.info li {
+	margin-top: 10px;
+	padding: 5px;
+}
+aside.info h2 {
+	text-align: center;
+	color: #003366;
+	background-color: #CCFFFF;
+	border: 3px solid #003366;
+	border-radius: 25px 0px 25px;
+	margin: 5px;
+	padding: 5px;
+	font-size: 21px;
+	letter-spacing: 3px;
+}
+aside.info p {
+	border-left: 5px solid #003366;
+	border-right: 1px solid #003366;
+	background-color: #CCFFFF;
+	opacity: .5em;
+	padding: 10px;
+}

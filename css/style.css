@@ -1,0 +1,476 @@
+/*
+			====		 ==		======	=====		==
+			==	==   ==			==		==			==
+			==	 ==  ==			==		=====		==
+			==		== ==			==		==			==
+			==			===		======	=====		======
+
+			==	 ==		====== ===		== ===     == ======  ======== ==		==
+			==  ==		==		 == =		== == =    == ==			======== ==   ==
+			== ==			==     == ==	== ==  ==  == ==				 ==    ==   ==
+			=====			====== ==  ==	== ==   == == ======     ==    =======
+ 			==	==		==     ==   ==== ==    ==== ==         ==    ==		==
+			==	 ==		=====  ==    === ==     === ======     ==    ==		==
+*/
+@font-face {
+	src: url("../fonts/sao.otf");
+	font-family: sao;
+}
+@font-face {
+	src: url("../fonts/alo.otf");
+	font-family: alo;
+}
+body {
+	font-family: sao;
+	background:url('../img/aincrad.jpg') no-repeat center center fixed;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+	letter-spacing: 1px;
+}
+a {
+	text-decoration: none;
+	color: #000000;
+}
+
+/**** START OF INDEX(HOME) PAGE ****/
+/******** Header **********/
+		h1#logo {
+			font-size: 350%;
+			letter-spacing: .5em;
+		}
+		h1#logo:hover {
+			font-size: 350%;
+			letter-spacing: .5em;
+			color: #FFA500;
+		}
+		div#navbar {
+			background-color: #FFA500;
+			margin-bottom: 25px;
+		}
+		div#navbar ul {
+			padding: 7px;
+			margin: 0px;
+			text-align: left;
+		}
+		div#navbar li {
+			display: inline-block;
+			text-align: center;
+		}
+		div#navbar li a {
+			text-decoration: none;
+			font-size: 25px;
+			padding: 15px 15px 5px 15px;
+			margin: 15px;
+			letter-spacing: 3px;
+			font-weight: normal;
+			margin-bottom: -5px;
+			color: #CCCCCC;
+		}
+		div#navbar li a:hover, div#navbar li a.active {
+			border-bottom: 5px solid  #cc5200;
+		}
+
+/********************
+		Featured  
+*********************/
+
+		div.featured_article {
+			background-color: #FFA500;
+			color: #CCCCCC;
+			padding: 25px 0px;
+			border-radius: 10px;
+		}
+		div.featured_article h2{
+			font-family: alo;
+			font-size: 30px;
+			text-align: center;
+			font-weight: normal;
+			letter-spacing: 10px;
+		}
+		div.featured_article p {
+			font-size: 20px;
+			padding: 5px;
+			text-align: justify;
+		}
+		.colorYellow {
+			color: #FFCC00;
+		}
+		div.featured_article  a {
+			text-decoration: none;
+			color: #FFA500;
+			font-style: italic;
+		}
+		div.featured {
+			text-align: center;
+			background-color: #CCCCCC;
+			border-radius: 10px;
+		}
+		img.featuredPic {
+			height: 250px;
+			width: 280px;
+			padding: 10px;
+		}
+		img.featuredText {
+			height: 250px;
+			width: 280px;
+			padding: 10px;
+		}
+		div.sections {
+			margin-top: 25px;
+			padding: 10px;
+			margin-bottom: 25px;
+			border-top: 10px solid #FFA500;
+			border-bottom: 10px solid #FFA500;
+			text-align: center;
+		}
+		div.features1, div.features2, div.features3  {
+			width: 250px;
+			height: 250px;
+			padding: auto;
+			border-radius: 5px; 
+		}
+		div.features1 {
+			background-image: url("../img/s1.png");
+		}	
+		div.features2 {
+			background-image: url("../img/s2.png");
+		}
+		div.features3 {
+			background-image: url("../img/s3.png");
+		}
+		div.features1:hover {
+			background-image: url("../img/s1-2.png");
+		}	
+		div.features2:hover {
+			background-image: url("../img/s2-2.png");
+		}
+		div.features3:hover {
+			background-image: url("../img/s3-2.png");
+		}
+		div.sections h2 {
+			font-size: 39px;
+			letter-spacing: 5px;
+		}
+/********************
+				 Credits   
+*********************/
+		.credits {
+			padding-top: 25px;
+		}
+		.credits a {
+			text-decoration: none;
+			color: #003366;
+		}
+		.credits blockquote {
+			background-color: #CCFFFF;
+			padding: 15px 20px 15px 45px;
+			margin: 0 0 20px;
+			position: relative;
+			font-size: 16px;
+			line-height: 1.2em;
+			color: #666;
+			text-align: justify;
+			border-left: 15px solid #FFA500;
+			border-right: 2px solid #FFA500;
+		}
+		.credits blockquote::before {
+			content: "\201C";
+			font-family: Georgia, serif;
+			font-size: 60px;
+			font-weight: bold;
+			color: #999;
+			position: absolute;
+			left: 10px;
+			top: 5px;
+		}
+
+		.credits span {
+			font-weight: bold;
+			font-style: italic;
+			letter-spacing: 2px;
+		}
+
+/**** END INDEX(HOME) PAGE ****/
+
+/**** START of Article Page ****/
+#articleHead h1 {
+	font-size: 39px;
+	letter-spacing: 5px;
+	text-align: center;
+	border-bottom: 5px solid #FFA500;
+	margin-bottom: 25px;
+}
+div.art {
+	padding: 15px;
+	letter-spacing: 2px;
+	margin-bottom: 10px;
+	border-bottom: 2px solid #666;
+}
+div.art:last-child {
+	border-bottom: none;
+}
+div.art a:hover, .articleSide a:hover {
+	color: #FFA600;
+}
+img.thumb {
+	height: 200px;
+	width: 200px;
+}
+div.art article {
+	width: 530px;
+	float: right;
+	padding: 0px 5px 5px;
+	
+}
+
+ul.meta li{
+	display: inline;
+	
+}
+ul.meta li:after{
+	content: "\\";
+	padding: 0 2px;
+}
+ul.meta li:last-child:after {
+	content: none;
+}
+ul.meta a, p.about a, p.resume a {
+	color: #FFA500;
+}
+div.art h2 {
+	font-size: 28px;
+	letter-spacing: 5px;
+	padding: 5px 5px 7px;
+}
+div.art p.about {
+	font-style: italic;
+	padding-bottom: 5px;
+}
+
+p.resume {
+	text-align: right;
+}
+.articleSide {
+	padding: 10px;
+}
+.articleSide h2 {
+	font-size: 16px;
+	color: white;
+	padding-bottom: 10px;
+	border-bottom: 2px solid #FFA500;
+}
+.articleSide li {
+	padding: 10px 5px;
+	border-bottom: 2px solid #FFA500;
+	text-align: center;
+	font-style: italic;
+}
+/**** END of ARTICLE PAGE ****/
+
+
+/**** Game Page ****/
+
+h1#games {
+	font-size: 36px;
+	letter-spacing: 5px;
+	text-align: center;
+	margin-bottom: 25px;
+	padding: 5px 5px 25px;
+	border-bottom: 5px solid #FFA500;
+}
+.gameinfo img {
+	width: 600px;
+	height: 250px;
+	padding: 10px;
+	border-radius: 25px 0px 25px;
+}
+.gameinfo h2 {
+	font-size: 29px;
+	letter-spacing: 5px;
+	padding: 10px;
+	color: #007766;
+	text-align: left;
+	margin-bottom: 15px;
+	border-bottom: 3px solid #007766;
+}
+h2#sao {
+	color: darkred;
+	border-bottom: 3px solid darkred;
+}
+h2#ggo {
+	color: darkviolet;
+	border-bottom: 3px solid darkviolet;
+}
+h2#und {
+	color: #002266;
+	border-bottom: 3px solid #002266;
+}
+
+figure {
+	background-color: #efefef;
+	border-radius: 25px 0px 25px;
+	color: #665544;
+	font-size: 19px;
+}
+figcaption {
+	padding: 5px;
+}
+aside#genre {
+	padding: 20px 10px 10px;
+}
+aside#genre h3 {
+	font-size: 19px;
+	letter-spacing: 2px;
+}
+aside#genre li {
+	font-size: 18px;
+	width: 200px;
+	padding: 5px;
+}
+aside#genre a {
+	background-color: transparent;
+	display: block;
+}
+li.odd, li.odd a{
+	background-color: #CCCCCC;
+	color: #000000;
+}
+li.even, li.even a {
+	background-color: #efefef;
+	color: #000000;
+}
+li.even:hover, li.odd:hover, li.even a:hover, li.odd a:hover {
+	background-color: #003366;
+	color: #fff;
+}
+#featuredGame img, #gameLast img{
+	width: 200px;
+	height: 200px;
+	border-radius: 5px;
+	padding: 10px 5px 10px 35px;
+}
+section#featuredGame h2, section#gameLast h2 {
+	font-size: 21px;
+	letter-spacing: 5px;
+	text-align: center;
+	padding: 5px;
+}
+section#featuredGame h3, section#gameLast h3 {
+	padding: 10px;
+	font-size: 19px;
+}
+section#featuredGame {
+	border-bottom: 2px solid #efefef;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}
+section#gameLast h3{
+	text-align: center;
+}
+/**** END OF GAME PAGE ****/
+
+/**** START OF SERVICE PAGE ****/
+h1#serviceHead {
+	font-size: 36px;
+	letter-spacing: 5px;
+	text-align: center;
+	border-bottom: 5px solid #003366;
+	padding-bottom: 10px;
+	margin-bottom: 25px;
+}
+h2.category {
+	font-size: 29px;
+	letter-spacing: 3px;
+	border-bottom: 3px solid #003366;
+	padding: 10px 0px;
+	margin-bottom: 15px;
+}
+.service h2 {
+	font-size: 25px;
+	letter-spacing: 3px;
+	text-align: center;
+	color: #003366;
+	padding: 10px;
+	margin-bottom: 15px;
+}
+section {
+	margin: 5px;
+	padding: 5px;
+	text-align: justify;
+}
+div.service1, div.service2, div.service3, div.service4, div.service5, div.service6{
+	height: 250px;
+	width: 250px;
+}
+div.service1 {
+	background-image: url("../img/p1-2.png");
+}
+div.service2 {
+	background-image: url("../img/p2-2.png");
+}
+div.service3 {
+	background-image: url("../img/p3-2.png");
+}
+div.service4 {
+	background-image: url("../img/p4-2.png");
+}
+div.service5 {
+	background-image: url("../img/p5-2.png");
+}
+div.service6 {
+	background-image: url("../img/p6-2.png");
+}
+div.service1:hover {
+	background-image: url("../img/p1.png");
+}
+div.service2:hover {
+	background-image: url("../img/p2.png");
+}
+div.service3:hover {
+	background-image: url("../img/p3.png");
+}
+div.service4:hover {
+	background-image: url("../img/p4.png");
+}
+div.service5:hover {
+	background-image: url("../img/p5.png");
+}
+div.service6:hover {
+	background-image: url("../img/p6.png");
+}
+section.service p {
+	padding-top: 10px;
+	margin-top: 10px;
+}
+
+/**** END OF SERVICE SECTION ****/
+
+/********************
+**       Footer    **
+*********************/
+.footer {
+	clear: both;
+	overflow: hidden;
+	background-color: #FFA500;
+	color: oranje;
+	padding: 15px 5px 5px 5px;
+	margin-top: 20px;
+	border-radius: 20px 0px 20px 0px;
+	margin-bottom: 5px;
+	}
+.footer p {
+	padding: 5px;
+	margin-left: 10px;
+	font-size: 16px;
+}
+.footer a {
+	text-decoration: none;
+	color: #FFCC00;
+}
