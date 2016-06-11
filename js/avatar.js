@@ -12,11 +12,11 @@ function init() {
 	
 	Khristian = new THREE.Group();
 	
-	var DarkserverTexture = THREE.ImageUtils.loadTexture("images/Khristian.png");
-	DarkserverTexture.magFilter = THREE.NearestFilter;
-	DarkserverTexture.minFilter = THREE.LinearMipMapLinearFilter;
+	var KhristianTexture = THREE.ImageUtils.loadTexture("images/Khristian.png");
+	KhristianTexture.magFilter = THREE.NearestFilter;
+	KhristianTexture.minFilter = THREE.LinearMipMapLinearFilter;
 	
-	var Material = new THREE.MeshPhongMaterial({map: DarkserverTexture, side: THREE.FrontSide, transparent: true});
+	var Material = new THREE.MeshPhongMaterial({map: KhristianTexture, side: THREE.FrontSide, transparent: true});
 	
 	var HeadGeometry = addBox(0, 0, 64, 64, 8, 8, 8);
 	var Head = new THREE.Mesh(HeadGeometry, Material);
