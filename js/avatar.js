@@ -11,30 +11,30 @@ function init() {
 	Player = new THREE.Group();
 	
 	var SkinTexture = THREE.ImageUtils.loadTexture("images/minecraft_skin.jpg");
-	SkinTexture.magFilter = THREE.NearestFilter;
-	SkinTexture.minFilter = THREE.LinearMipMapLinearFilter;
+	/*SkinTexture.magFilter = THREE.NearestFilter;
+	SkinTexture.minFilter = THREE.LinearMipMapLinearFilter;*/
 	
 	var Material = new THREE.MeshPhongMaterial({map: SkinTexture, side: THREE.FrontSide, transparent: true});
 	
-	var HeadGeometry = addBox(0, 0, 64, 64, 8, 8, 8);
+	 var HeadGeometry = addBox(0, 0, 64, 64, 8, 8, 8);
 	var Head = new THREE.Mesh(HeadGeometry, Material);
 
-   var HeadOverlayGeometry = addBox(32, 0, 64, 64, 8, 8.5, 8.5);
+   var HeadOverlayGeometry = addBox(32, 0, 64, 64, 8, 8, 8.5);
 	var HeadOverlay = new THREE.Mesh(HeadOverlayGeometry, Material);
 	
 	var BodyGeometry = addBox(16, 16, 64, 64, 8, 12, 4);
 	var Body = new THREE.Mesh(BodyGeometry, Material);
 	Body.position.set(0, -10/16, 0);
 
-   var BodyOverlayGeometry = addBox(16, 32, 64, 64, 8, 12.5, 4.5);
+   var BodyOverlayGeometry = addBox(16, 32, 64, 64, 8, 12, 4.5);
 	var BodyOverlay = new THREE.Mesh(BodyOverlayGeometry, Material);
 	BodyOverlay.position.set(0, -10/16, 0);
 	
-	var RightArmGeometry = addBox(32, 48, 64, 64, 4, 12, 4);
+	 var RightArmGeometry = addBox(32, 48, 64, 64, 4, 12, 4);
 	var RightArm = new THREE.Mesh(RightArmGeometry, Material);
 	RightArm.position.set(-6/16,-10/16,0);
-	
-	var RightArmOverlayGeometry = addBox(48, 48, 64, 64, 4.5, 12.5, 4.5);
+
+	var RightArmOverlayGeometry = addBox(48, 48, 64, 64, 4.5, 12, 4.5);
 	var RightArmOverlay = new THREE.Mesh(RightArmOverlayGeometry, Material);
 	RightArmOverlay.position.set(-6/16,-10/16,0);
 	
@@ -42,27 +42,27 @@ function init() {
 	var LeftArm = new THREE.Mesh(LeftArmGeometry, Material);
 	LeftArm.position.set(6/16,-10/16,0);
 	
-	var LeftArmOverlayGeometry = addBox(40, 32, 64, 64, 4.5, 12.5, 4.5);
+	var LeftArmOverlayGeometry = addBox(40, 32, 64, 64, 4, 12, 4.5);
 	var LeftArmOverlay = new THREE.Mesh(LeftArmOverlayGeometry, Material);
 	LeftArmOverlay.position.set(6/16,-10/16,0);
 	
 	var RightLegGeometry = addBox(0, 16, 64, 64, 4, 12, 4);
 	var RightLeg = new THREE.Mesh(RightLegGeometry, Material);
 	RightLeg.position.set(-2/16,-22/16,0);
-	
-	var LeftLegGeometry = addBox(16, 48, 64, 64, 4, 12, 4);
-	var LeftLeg = new THREE.Mesh(LeftLegGeometry, Material);
-	LeftLeg.position.set(2/16,-22/16,0);
 
-   var RightLegOverlayOverlayGeometry = addBox(0, 32, 64, 64, 4, 12.5, 4.5);
+   var RightLegOverlayGeometry = addBox(0, 32, 64, 64, 4, 12, 4.5);
 	var RightLegOverlay = new THREE.Mesh(RightLegOverlayGeometry, Material);
 	RightLegOverlay.position.set(-2/16,-22/16,0);
-	
-	var LeftLegOverlayGeometry = addBox(0, 48, 64, 64, 4, 12.5, 4.5);
+    
+   var LeftLegGeometry = addBox(16, 48, 64, 64, 4, 12, 4);
+	var LeftLeg = new THREE.Mesh(LeftLegGeometry, Material);
+	LeftLeg.position.set(2/16,-22/16,0);
+   
+   	var LeftLegOverlayGeometry = addBox(0, 48, 64, 64, 4, 12, 4.5);
 	var LeftLegOverlay = new THREE.Mesh(LeftLegOverlayGeometry, Material);
 	LeftLegOverlay.position.set(2/16,-22/16,0);
 	
-	Player.add(Head,HeadOverlay,Body,BodyOverlay,RightArm,RightArmOverlay,LeftArm,LeftArmOverlay,LeftLeg,LeftLegOverlay,RightLeg,RightLegOverlay);
+	Player.add(Head,HeadOverlay,Body,BodyOverlay,RightArm,RightArmOverlay,LeftArm,LeftArmOverlay,RightLeg,RightLegOverlay,LeftLeg,LeftLegOverlay);
 	
 	Player.position.set(0, 2/16, 0);
 	scene.add(Player);
@@ -78,7 +78,7 @@ function init() {
 	else renderer = new THREE.CanvasRenderer({alpha: true});
 	renderer.setPixelRatio(window.devicePixelRatio);
 	renderer.setClearColor(0xFFFFFF, 0);
-	renderer.setSize(64, 96);
+	renderer.setSize(64*2, 96*2);
 	renderer.domElement.style.zIndex = 10001; //put it above the toast
 	renderer.domElement.style.position = "fixed";
 	renderer.domElement.style.bottom = "0px";
@@ -97,6 +97,8 @@ function init() {
 		touchmoveEnabled = false;
 		Head.rotation.y = ((e.clientX/2)-(window.innerWidth/2))/window.innerWidth;
 		Head.rotation.x = ((e.clientY/2)-(window.innerHeight/2))/window.innerHeight;
+       HeadOverlay.rotation.y = ((e.clientX/2)-(window.innerWidth/2))/window.innerWidth;
+		HeadOverlay.rotation.x = ((e.clientY/2)-(window.innerHeight/2))/window.innerHeight;
 		touchmoveEnabled = true;
 		//render();
 	}, false);
@@ -106,6 +108,8 @@ function init() {
 		if(touchmoveEnabled) {
 			Head.rotation.y = ((e.touches[0].clientX/2)-(window.innerWidth/2))/window.innerWidth;
 			Head.rotation.x = ((e.touches[0].clientY/2)-(window.innerHeight/2))/window.innerHeight;
+          HeadOverlay.rotation.y = ((e.touches[0].clientX/2)-(window.innerWidth/2))/window.innerWidth;
+			HeadOverlay.rotation.x = ((e.touches[0].clientY/2)-(window.innerHeight/2))/window.innerHeight;
 			//render();
 		}
 	}, false);
