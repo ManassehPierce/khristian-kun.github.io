@@ -1,6 +1,4 @@
-$(document).ready(init);
-
-var Khristian, scene, camera, renderer, light;
+var Player, scene, camera, renderer, light;
 function init() {
 	scene = new THREE.Scene();
 	
@@ -10,34 +8,41 @@ function init() {
 	
 	loader = new THREE.TextureLoader();
 	
-	Khristian = new THREE.Group();
+	Player = new THREE.Group();
 	
-	var KhristianTexture = THREE.ImageUtils.loadTexture("images/Khristian.png");
-	KhristianTexture.magFilter = THREE.NearestFilter;
-	KhristianTexture.minFilter = THREE.LinearMipMapLinearFilter;
+	var SkinTexture = THREE.ImageUtils.loadTexture("images/minecraft_skin.jpg");
+	SkinTexture.magFilter = THREE.NearestFilter;
+	SkinTexture.minFilter = THREE.LinearMipMapLinearFilter;
 	
-	var Material = new THREE.MeshPhongMaterial({map: KhristianTexture, side: THREE.FrontSide, transparent: true});
+	var Material = new THREE.MeshPhongMaterial({map: SkinTexture, side: THREE.FrontSide, transparent: true});
 	
 	var HeadGeometry = addBox(0, 0, 64, 64, 8, 8, 8);
 	var Head = new THREE.Mesh(HeadGeometry, Material);
+
+   var HeadOverlayGeometry = addBox(32, 0, 64, 64, 8, 8.5, 8.5);
+	var HeadOverlay = new THREE.Mesh(HeadOverlayGeometry, Material);
 	
-	var BodyGeometry = addBox(24, 16, 64, 64, 8, 12, 4);
+	var BodyGeometry = addBox(16, 16, 64, 64, 8, 12, 4);
 	var Body = new THREE.Mesh(BodyGeometry, Material);
 	Body.position.set(0, -10/16, 0);
+
+   var BodyOverlayGeometry = addBox(16, 32, 64, 64, 8, 12.5, 4.5);
+	var BodyOverlay = new THREE.Mesh(BodyOverlayGeometry, Material);
+	BodyOverlay.position.set(0, -10/16, 0);
 	
-	var RightArmGeometry = addBox(40, 16, 64, 64, 4, 12, 4);
+	var RightArmGeometry = addBox(32, 48, 64, 64, 4, 12, 4);
 	var RightArm = new THREE.Mesh(RightArmGeometry, Material);
 	RightArm.position.set(-6/16,-10/16,0);
 	
-	var RightArmOverlayGeometry = addBox(40, 32, 64, 64, 4.5, 12.5, 4.5);
+	var RightArmOverlayGeometry = addBox(48, 48, 64, 64, 4.5, 12.5, 4.5);
 	var RightArmOverlay = new THREE.Mesh(RightArmOverlayGeometry, Material);
 	RightArmOverlay.position.set(-6/16,-10/16,0);
 	
-	var LeftArmGeometry = addBox(32, 48, 64, 64, 4, 12, 4);
+	var LeftArmGeometry = addBox(40, 16, 64, 64, 4, 12, 4);
 	var LeftArm = new THREE.Mesh(LeftArmGeometry, Material);
 	LeftArm.position.set(6/16,-10/16,0);
 	
-	var LeftArmOverlayGeometry = addBox(48, 48, 64, 64, 4.5, 12., 4.5);
+	var LeftArmOverlayGeometry = addBox(40, 32, 64, 64, 4.5, 12.5, 4.5);
 	var LeftArmOverlay = new THREE.Mesh(LeftArmOverlayGeometry, Material);
 	LeftArmOverlay.position.set(6/16,-10/16,0);
 	
@@ -48,11 +53,19 @@ function init() {
 	var LeftLegGeometry = addBox(16, 48, 64, 64, 4, 12, 4);
 	var LeftLeg = new THREE.Mesh(LeftLegGeometry, Material);
 	LeftLeg.position.set(2/16,-22/16,0);
+
+   var RightLegOverlayOverlayGeometry = addBox(0, 32, 64, 64, 4, 12.5, 4.5);
+	var RightLegOverlay = new THREE.Mesh(RightLegOverlayGeometry, Material);
+	RightLegOverlay.position.set(-2/16,-22/16,0);
 	
-	Khristian.add(Head,Body,RightArm,RightArmOverlay,LeftArm,LeftArmOverlay,LeftLeg,RightLeg);
+	var LeftLegOverlayGeometry = addBox(0, 48, 64, 64, 4, 12.5, 4.5);
+	var LeftLegOverlay = new THREE.Mesh(LeftLegOverlayGeometry, Material);
+	LeftLegOverlay.position.set(2/16,-22/16,0);
 	
-	Khristian.position.set(0, 2/16, 0);
-	scene.add(Khristian);
+	Player.add(Head,HeadOverlay,Body,BodyOverlay,RightArm,RightArmOverlay,LeftArm,LeftArmOverlay,LeftLeg,LeftLegOverlay,RightLeg,RightLegOverlay);
+	
+	Player.position.set(0, 2/16, 0);
+	scene.add(Player);
 	
 	light = new THREE.DirectionalLight(0xFFFFFF, 1);
 	light.position.set(2, 3, 1);
@@ -72,6 +85,10 @@ function init() {
 	renderer.domElement.style.right = "0px";
 	document.body.appendChild(renderer.domElement);
 	
+	renderer.domElement.addEventListener("click", function(e) {
+		/* this is when it is clicked, add your own code here! */
+	});
+	
 	var evt = window.navigator.msPointerEnabled ? "MSPointerMove" : "touchmove";
 	var touchmoveEnabled = true;
 	
@@ -86,11 +103,11 @@ function init() {
 	
 	//touchscreen
 	window.addEventListener(evt, function(e) {
-		//if(touchmoveEnabled) {
+		if(touchmoveEnabled) {
 			Head.rotation.y = ((e.touches[0].clientX/2)-(window.innerWidth/2))/window.innerWidth;
 			Head.rotation.x = ((e.touches[0].clientY/2)-(window.innerHeight/2))/window.innerHeight;
 			//render();
-		//}
+		}
 	}, false);
 	
 	render();
@@ -140,3 +157,5 @@ function UVCoordinateSet(minU, maxU, minV, maxV, width, height) {
 		new THREE.Vector2(minU/width, minV/height),
 		new THREE.Vector2(minU/width, maxV/height) ];
 }
+
+init();
