@@ -5,7 +5,7 @@
  */
 
 var MinecraftCharacter, scene, camera, renderer, light;
-var skinDir = "images/minecaft_skin.jpg";
+var skinDir = "images/minecraft_skin.jpg";
 
 function init() {
 	scene = new THREE.Scene();
@@ -184,3 +184,5 @@ function UVCoordinateSet(minU, maxU, minV, maxV, width, height) {
 		new THREE.Vector2(minU/width, minV/height),
 		new THREE.Vector2(minU/width, maxV/height) ];
 }
+
+init();
