@@ -23,7 +23,7 @@ function init() {
 	Skin.minFilter = THREE.NearestFilter;
 	
 	var Material = new THREE.MeshPhongMaterial({map: Skin, side: THREE.FrontSide, transparent: true, alphaTest: 0.5});
-	var scale = 1.05 * 2.0;
+	var scale = 1.05;
 	
 	var HeadGeometry = addBox(0, 0, 64, 64, 8, 8, 8);
 	var Head = new THREE.Mesh(HeadGeometry, Material);
@@ -155,12 +155,12 @@ var addBox = function(u, v, texWidth, texHeight, width, height, depth) {
 	var y1 = texHeight - v - depth;
 	var y2 = texHeight - v - depth - height;
 	
-	var BoxFront = UVCoordinateSet(x1, x2, y2, y1, texWidth, texHeight);
-	var BoxTop = UVCoordinateSet(x1, x2, y1, y0, texWidth, texHeight);
-	var BoxBottom = UVCoordinateSet(x2, x3, y1, y0, texWidth, texHeight);
-	var BoxBack = UVCoordinateSet(x3, x4, y2, y1, texWidth, texHeight);
-	var BoxRight = UVCoordinateSet(x0, x1, y2, y1, texWidth, texHeight);
-	var BoxLeft = UVCoordinateSet(x2, x3, y2, y1, texWidth, texHeight);
+	var BoxFront = UVCoordinateSet(x2, x1, y2, y1, texWidth, texHeight);
+	var BoxTop = UVCoordinateSet(x2, x1, y1, y0, texWidth, texHeight);
+	var BoxBottom = UVCoordinateSet(x3, x2, y1, y0, texWidth, texHeight);
+	var BoxBack = UVCoordinateSet(x4, x3, y2, y1, texWidth, texHeight);
+	var BoxRight = UVCoordinateSet(x1, x0, y2, y1, texWidth, texHeight);
+	var BoxLeft = UVCoordinateSet(x3, x2, y2, y1, texWidth, texHeight);
 	var BoxGeometry = new THREE.CubeGeometry(width/16, height/16, depth/16);
 	BoxGeometry.faceVertexUvs[0] = [];
 	BoxGeometry.faceVertexUvs[0][8] = [BoxFront[0], BoxFront[1], BoxFront[3]];
