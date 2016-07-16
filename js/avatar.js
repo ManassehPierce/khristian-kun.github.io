@@ -104,6 +104,7 @@ function init() {
 	renderer.setPixelRatio(window.devicePixelRatio);
 	renderer.setClearColor(0xFFFFFF, 0);
 	renderer.setSize(64, 96);
+	renderer.domElement.style.zIndex = "10001";
 	renderer.domElement.style.position = "fixed";
 	renderer.domElement.style.bottom = "0px";
 	renderer.domElement.style.right = "0px";
