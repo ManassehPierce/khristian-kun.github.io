@@ -23,7 +23,7 @@ function init() {
 	Skin.minFilter = THREE.NearestFilter;
 	
 	var Material = new THREE.MeshPhongMaterial({map: Skin, side: THREE.FrontSide, transparent: true, alphaTest: 0.5});
-	var scale = 1.05 * 4.0;
+	var scale = 1.05 * 2.0;
 	
 	var HeadGeometry = addBox(0, 0, 64, 64, 8, 8, 8);
 	var Head = new THREE.Mesh(HeadGeometry, Material);
